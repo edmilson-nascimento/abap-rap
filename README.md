@@ -81,6 +81,10 @@ Below are the typical steps for implementing the RESTful ABAP Programming Model:
 
 Below are the detailed steps for implementing an end-to-end example in the RESTful ABAP Programming Model:
 
+Segue os passos para implementar um exemplo de serviço OData utilizando o ABAP RAP (Rapid Application Programming) no SAP S/4HANA.
+
+0. **Create a package** com nome `ZRAP_EJ`.
+
 1. **Create a table** named `ZRAP_UXTEAM`:
    - `id`
    - `firstName`
@@ -89,6 +93,8 @@ Below are the detailed steps for implementing an end-to-end example in the RESTf
    - `role`
    - `salary`
    - `active`
+
+   ![Create Table Wizard](img/create_table_wizard.png)
 
 2. **Create an interface view** named `ZI_UXTEAM` that reads from table `ZRAP_UXTEAM`.
 
