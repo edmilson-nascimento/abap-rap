@@ -185,7 +185,6 @@ Essas anotações são usadas pelo RAP para controle **automático de versioname
 
  ![Create an interface view](img/3.%20Create%20a%20consumption%20view.png)
 
-" TODO alterar a imagem para o template correto
  ![Create an interface view](img/3.%20Create%20a%20consumption%20view%20(template).png)
 
 Neste exemplo, o código da view é o seguinte:
@@ -286,12 +285,26 @@ Tambem é possivel e recomendado extrair o metadados de anotações de UI do CDS
 
  ![Create an metadata extension](img/metadata%20extension%20(extract).png)
 
-#### **Define entities for Business Object**:
-   - `CREATE`, `UPDATE`, `DELETE` operations.
-   - Validations during `CREATE` – Age should be greater than 21.
-   - Actions – Active flag is set to true after a series of checks are complete.
-   - Determination – When `Role` is changed, we change the `Salary`.
-   - Feature control – `Salary` is marked read-only.
+#### **Define entities for Business Object**
+
+Defina as entidades para o Business Object com as seguintes operações e validações:
+
+1. **`CREATE`, `UPDATE`, `DELETE` operations**:
+   - Permitir operações básicas de criação, atualização e exclusão.
+
+2. **Validações durante `CREATE`**:
+   - A idade (`age`) deve ser maior que 21.
+
+3. **Ações (`Actions`)**:
+   - A flag `active` é definida como `true` após uma série de verificações serem concluídas.
+
+4. **Determinações (`Determinations`)**:
+   - Quando o campo `role` é alterado, o campo `salary` também é atualizado automaticamente.
+
+5. **Controle de recursos (`Feature control`)**:
+   - O campo `salary` é marcado como somente leitura (`read-only`).
+
+Essas definições são essenciais para garantir que o Business Object siga as regras de negócios e comportamentos esperados no modelo RAP.
 
 #### **Define Behavior Definitions**:
    - Note that `CUD` operations are **FREE**.
