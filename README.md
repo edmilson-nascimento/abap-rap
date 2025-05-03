@@ -141,7 +141,7 @@ Neste exemplo, o código da view é o seguinte:
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Interface view for UX demo'
 // @Metadata.ignorePropagatedAnnotations: true
-define view zi_uxteam_ej
+define root view zi_uxteam_ej
   as select from zrap_uxteam_ej
 {
   key id                    as Id,
@@ -157,14 +157,14 @@ define view zi_uxteam_ej
       local_last_changed_at as LocalLastChangedAt
 }
 ```
-Todos os campos da tabela sao adicionados na view, exceto os campos `client`, `last_changed_at` e `local_last_changed_at`, que são gerenciados pelo sistema.
 
 Foi adicionar um **ZZ** no nome da view para evitar conflitos com views padrão do sistema.
 ```sql
 @AbapCatalog.sqlViewName: 'ZZI_UXTEAM_EJ'
 ```
 
-Notas:
+Todos os campos da tabela sao adicionados na view, exceto os campos `client`, `last_changed_at` e `local_last_changed_at`, que são gerenciados pelo sistema.
+
 ```abap
 @Semantics.systemDateTime.lastChangedAt: true
 last_changed_at       as LastChangedAt,
@@ -179,9 +179,43 @@ Essas anotações são usadas pelo RAP para controle **automático de versioname
 `local_last_changed_at`: Similar, mas referente à instância local (em contextos de objetos compostos).
 
 
+3. **Create a consumption view** named `ZC_UXTEAM_EJ` that reads from interface view `ZI_UXTEAM_EJ`.
 
-3. **Create a consumption view** named `ZC_UXTEAM` that reads from interface view `ZI_UXTEAM`.
+ ![Create an interface view](img/3.%20Create%20a%20consumption%20view.png)
 
+ ![Create an interface view](img/3.%20Create%20a%20consumption%20view%20(template).png)
+
+Neste exemplo, o código da view é o seguinte:
+```sql
+@EndUserText.label: 'UXTeam Consumption View'
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@Search.searchable: true
+@Metadata.allowExtensions: true
+define root view entity ZC_UXTEAM_EJ
+  provider contract transactional_interface
+  as projection on zi_uxteam_ej as UXTeam
+{
+    @EndUserText.label: 'Id'
+  key Id,
+  @EndUserText.label: 'First Name'
+      @Search.defaultSearchElement: true
+      Firstname,
+      @EndUserText.label: 'Last Name'
+      @Search.defaultSearchElement: true
+      Lastname,
+      @EndUserText.label: 'Age'
+      Age,
+      @Search.defaultSearchElement: true
+      @EndUserText.label: 'Role'
+      Role,
+      @EndUserText.label: 'Salary'
+      Salary,
+      @EndUserText.label: 'Active'
+      Active,
+      LastChangedAt,
+      LocalLastChangedAt
+}
+```
 4. **Create a metadata extension file** for UI annotations.
 
 5. **Define entities for Business Object**:
