@@ -73,4 +73,46 @@ Below are the typical steps for implementing the RESTful ABAP Programming Model:
 10. Define service binding.
 11. Optionally – Add draft handling feature.
 
+### End-to-End Example
+
+Below are the detailed steps for implementing an end-to-end example in the RESTful ABAP Programming Model:
+
+1. **Create a table** named `ZRAP_UXTEAM`:
+   - `id`
+   - `firstName`
+   - `lastName`
+   - `age`
+   - `role`
+   - `salary`
+   - `active`
+
+2. **Create an interface view** named `ZI_UXTEAM` that reads from table `ZRAP_UXTEAM`.
+
+3. **Create a consumption view** named `ZC_UXTEAM` that reads from interface view `ZI_UXTEAM`.
+
+4. **Create a metadata extension file** for UI annotations.
+
+5. **Define entities for Business Object**:
+   - `CREATE`, `UPDATE`, `DELETE` operations.
+   - Validations during `CREATE` – Age should be greater than 21.
+   - Actions – Active flag is set to true after a series of checks are complete.
+   - Determination – When `Role` is changed, we change the `Salary`.
+   - Feature control – `Salary` is marked read-only.
+
+6. **Define Behavior Definitions**:
+   - Note that `CUD` operations are **FREE**.
+
+7. **Implement Behavior Definitions**.
+
+8. **Define Behavior Projections**:
+   - Project all behaviors except `DELETE`.
+
+9. **Define Service Definition**.
+
+10. **Define Service Binding**:
+    - `OData V2` with UI annotations.
+    - `OData V2` without Fiori element app.
+
+11. **Add draft handling functionality**.
+
 "Se vi mais longe, foi por estar sobre os ombros de gigantes"
