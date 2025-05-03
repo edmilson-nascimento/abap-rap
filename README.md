@@ -91,13 +91,9 @@ Below are the typical steps for implementing the RESTful ABAP Programming Model:
 
 Segue os passos para implementar um exemplo de serviço OData utilizando o ABAP RAP (Rapid Application Programming) no SAP S/4HANA.
 
----
-
 #### **Create a package** com nome `ZRAP_EJ`
 
 Crie um pacote no sistema SAP com o nome `ZRAP_EJ` para organizar os objetos do projeto.
-
----
 
 #### **Create a table** com nome `ZRAP_UXTEAM_EJ`
 
@@ -224,6 +220,71 @@ define root view entity ZC_UXTEAM_EJ
 }
 ```
 #### **Create a metadata extension file** for UI annotations.
+ ![Create an metadata extension](img/metadata%20extension.png)
+ ![Create an metadata extension](img/metadata%20extension%20(data).png)
+ ![Create an metadata extension](img/metadata%20extension%20(template).png)
+
+Neste exemplo, o código da metadata extension é o seguinte:
+```sql
+@Metadata.layer: #CORE
+
+@UI.headerInfo: { typeName: 'UX Team',
+                  typeNamePlural: 'UX Team',
+                  title: { type: #STANDARD, label: 'UXTeam', value: 'Id' } }
+
+@UI.presentationVariant: [ { sortOrder: [ { by: 'Id', direction: #ASC } ] } ]
+
+annotate view ZC_UXTEAM_EJ with
+
+{
+  @UI.facet: [ { id: 'UXDemo',
+                 purpose: #STANDARD,
+                 type: #IDENTIFICATION_REFERENCE,
+                 label: 'UXTeam',
+                 position: 10 } ]
+  @UI.identification: [ { position: 1, label: 'Id' } ]
+  Id;
+
+  @UI.identification: [ { position: 20 } ]
+  @UI.lineItem: [ { position: 20 } ]
+  @UI.selectionField: [ { position: 20 } ]
+  Firstname;
+
+  @UI.identification: [ { position: 30 } ]
+  @UI.lineItem: [ { position: 30 } ]
+  @UI.selectionField: [ { position: 30 } ]
+  Lastname;
+
+  @UI.identification: [ { position: 40 } ]
+  @UI.lineItem: [ { position: 40 } ]
+  Age;
+
+  @UI.identification: [ { position: 50 } ]
+  @UI.lineItem: [ { position: 50 } ]
+  Role;
+
+  @UI.identification: [ { position: 60 } ]
+  @UI.lineItem: [ { position: 60 } ]
+  @UI.selectionField: [ { position: 60 } ]
+  Salary;
+
+  @UI.identification: [ { position: 70 },
+                        { type: #FOR_ACTION, dataAction: 'setActive', label: 'Set Active' } ]
+  @UI.lineItem: [ { position: 70 },
+                  { type: #FOR_ACTION, dataAction: 'setActive', label: 'Set Active' } ]
+  Active;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+}
+```
+
+Tambem é possivel e recomendado extrair o metadados de anotações de UI do CDS e criar um arquivo separado para facilitar a manutenção. Para isso, utilize o seguinte exemplo:
+
+ ![Create an metadata extension](img/metadata%20extension%20(extract).png)
 
 #### **Define entities for Business Object**:
    - `CREATE`, `UPDATE`, `DELETE` operations.
