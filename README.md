@@ -28,7 +28,7 @@ Se você deseja acessar o conteúdo original, visite o canal do autor no YouTube
 
 ## ABAP RAP - Exemplo de implementação
 ### O que é ABAP RAP?
-O ABAP RAP (Rapid Application Programming) é um modelo de programação que permite o desenvolvimento ágil de aplicações no SAP S/4HANA. Ele combina a flexibilidade do ABAP com as melhores práticas de desenvolvimento moderno, como a utilização de serviços OData e a separação entre lógica de negócios e interface do usuário.
+O ABAP RAP (RESTful Application Programming Model) é um modelo de programação que permite o desenvolvimento ágil de aplicações no SAP S/4HANA. Ele combina a flexibilidade do ABAP com as melhores práticas de desenvolvimento moderno, como a utilização de serviços OData e a separação entre lógica de negócios e interface do usuário.
 
 ### Exemplo de implementação de um serviço OData utilizando o ABAP RAP no SAP S/4HANA.
 O exemplo consiste em um serviço OData que permite a criação, leitura, atualização e exclusão de dados de um objeto de negócios (Business Object) chamado "Produto".
