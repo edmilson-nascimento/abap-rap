@@ -85,7 +85,7 @@ Segue os passos para implementar um exemplo de serviço OData utilizando o ABAP 
 
 0. **Create a package** com nome `ZRAP_EJ`.
 
-1. **Create a table** named `ZRAP_UXTEAM`:
+1. **Create a table** com nome `ZRAP_UXTEAM_EJ` with the following fields:
    - `id`
    - `firstName`
    - `lastName`
@@ -95,6 +95,28 @@ Segue os passos para implementar um exemplo de serviço OData utilizando o ABAP 
    - `active`
 
    ![Create Table Wizard](img/1.%20Create%20a%20table.png)
+
+```SQL
+@EndUserText.label : 'UX demo table'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #ALLOWED
+define table zrap_uxteam_ej {
+
+  key client            : abap.clnt not null;
+  key id                : sysuuid_x16 not null;
+  firstname             : abap.char(100);
+  lastname              : abap.char(100);
+  age                   : abap.numc(4);
+  role                  : abap.char(100);
+  salary                : abap.numc(4);
+  active                : abap_boolean;
+  last_changed_at       : timestampl;
+  local_last_changed_at : timestampl;
+
+}
+```
 
 2. **Create an interface view** named `ZI_UXTEAM` that reads from table `ZRAP_UXTEAM`.
 
