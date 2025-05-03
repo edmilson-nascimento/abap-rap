@@ -57,4 +57,20 @@ flowchart TD
     classDef orangeBox fill:#fff7e6,stroke:#fa8c16,stroke-width:2,color:#000;
 ```
 
+### Steps for RESTful ABAP Programming Model
+
+Below are the typical steps for implementing the RESTful ABAP Programming Model:
+
+1. Create a table.
+2. Create an interface view that reads from this table.
+3. Create a consumption view that reads from this interface view.
+4. Create a metadata extension file.
+5. Define entities for Business Object.
+6. Define behavior definitions.
+7. Implement behavior definitions.
+8. Define behavior projections.
+9. Define service definition.
+10. Define service binding.
+11. Optionally – Add draft handling feature.
+
 "Se vi mais longe, foi por estar sobre os ombros de gigantes"
