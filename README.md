@@ -16,10 +16,31 @@ ABAP Unit Tests e diferentes exemplos
 
 ```mermaid
 flowchart TD
-    A([SAP Cloud Platform, ABAP Environment<br>SAP S/4HANA ≥ 1909]) --> B([ABAP RESTful Application<br>Programming Model])
-    B --> C([Business Service])
-    B --> D([Core Data Services])
-    B --> E([Behavior Definition & Implementation])
+    subgraph ServiceConsumption[<b>Service consumption</b>]
+        direction TB
+        A1([SAP Fiori UX<br>Consume OData UI services]):::greenBox
+        A2([Web API<br>Consume OData Web APIs]):::greenBox
+    end
+
+    subgraph BusinessServicesProvisioning[<b>Business services provisioning</b>]
+        direction TB
+        B1([Service binding<br>Bind to protocol version and scenario]):::blueBox
+        B2([Service definition<br>Define scope to be exposed]):::blueBox
+        B3([Business object projection<br>CDS: Projection views<br>BDEF: Behavior projection<br>ABAP: Behavior implementation]):::blueBox
+    end
+
+    subgraph DataModelingAndBehavior[<b>Data modeling and behavior</b>]
+        direction TB
+        C1([Business objects<br>CDS: Data modeling<br>BDEF: Behavior definition<br>ABAP: Behavior implementation]):::orangeBox
+        C2([Queries<br>CDS: Data modeling]):::orangeBox
+    end
+
+    ServiceConsumption --> BusinessServicesProvisioning
+    BusinessServicesProvisioning --> DataModelingAndBehavior
+
+    classDef greenBox fill:#d9f7be,stroke:#52c41a,stroke-width:2,color:#000;
+    classDef blueBox fill:#e6f7ff,stroke:#1890ff,stroke-width:2,color:#000;
+    classDef orangeBox fill:#fff7e6,stroke:#fa8c16,stroke-width:2,color:#000;
 ```
 
 "Se vi mais longe, foi por estar sobre os ombros de gigantes"
