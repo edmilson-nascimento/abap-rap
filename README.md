@@ -4,10 +4,6 @@
 
 ---
 
-Este repositório é baseado na lista de reprodução do YouTube [RESTful ABAP Programming Model](https://www.youtube.com/playlist?list=PLKSPsENL3CxzRehaCAyH_K0yHM8KwLrDz).  
-Para fins de crédito ao autor, este repositório é uma versão em português do conteúdo apresentado na playlist.  
-Se você deseja acessar o conteúdo original, visite o canal do autor no YouTube.
-
 [![GitHub forks](https://img.shields.io/github/forks/edmilson-nascimento/ABAP-Unit-Tests?style=social)](https://github.com/edmilson-nascimento/ABAP-Unit-Tests/network/members)
 [![GitHub stars](https://img.shields.io/github/stars/edmilson-nascimento/ABAP-Unit-Tests?style=social)](https://github.com/edmilson-nascimento/ABAP-Unit-Tests/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/edmilson-nascimento/ABAP-Unit-Tests)](https://github.com/edmilson-nascimento/ABAP-Unit-Tests/issues)
@@ -18,6 +14,16 @@ Se você deseja acessar o conteúdo original, visite o canal do autor no YouTube
 ![UI5](https://img.shields.io/badge/UI5-0A9EDC?style=flat&logo=sap&logoColor=white)
 ![SAP BTP](https://img.shields.io/badge/SAP%20BTP-0A9EDC?style=flat&logo=sap&logoColor=white)
 ![SAP RAP](https://img.shields.io/badge/SAP%20RAP-0A9EDC?style=flat&logo=sap&logoColor=white)
+
+## Referências
+
+Este repositório é baseado na lista de reprodução do YouTube [RESTful ABAP Programming Model](https://www.youtube.com/playlist?list=PLKSPsENL3CxzRehaCAyH_K0yHM8KwLrDz).  
+Para fins de crédito ao autor, este repositório é uma versão em português do conteúdo apresentado na playlist.  
+Se você deseja acessar o conteúdo original, visite o canal do autor no YouTube.
+Milton Chandradas
+
+https://github.com/miltonchandradas
+https://github.com/miltonchandradas/rapdemo
 
 ## ABAP RAP - Exemplo de implementação
 ### O que é ABAP RAP?
@@ -125,7 +131,7 @@ define table zrap_uxteam_ej {
 
  ![Create an interface view](img/2%20Create%20an%20interface%20view.png)
 
- ![Create an interface view](img/2%20Create%20an%20interface%20view%20(template).png.png)
+ ![Create an interface view](img/2%20Create%20an%20interface%20view%20(template).png)
 
 Neste exemplo, o código da view é o seguinte:
 ```sql
