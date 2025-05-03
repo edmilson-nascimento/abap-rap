@@ -316,7 +316,6 @@ No exemplo abaixo, temos um **Business Object** chamado `HOUSE` (Casa), que é a
 
 No cenário de ponta a ponta deste exemplo, temos apenas uma única entidade (`UXTEAM`). Para representá-la como um **Business Object**, usamos a palavra-chave `root` no CDS.
 
-
 ```mermaid
 graph TD
     A[HOUSE -Root] -->|House has many Rooms| B[ROOM]
@@ -342,3 +341,23 @@ graph TD
     - `OData V2` without Fiori element app.
 
 #### **Add draft handling functionality**.
+
+---
+
+### Diagrama em Mermaid.js
+
+```mermaid
+graph TD
+    A[HOUSE (Root)] -->|1..1| B[Behavior Definition File]
+    B -->|BUILD (CREATE)| C[Create a new house]
+    B -->|REMODEL (UPDATE)| D[Update house details]
+    B -->|DESTROY (DELETE)| E[Delete a house]
+    B -->|Determination| F[Call repair man if plumbing problem]
+    B -->|Action| G[Buy, Sell the house]
+    B -->|Validation| H[Check out school district]
+
+    classDef rootEntity fill:#e6f7ff,stroke:#1890ff,stroke-width:2,color:#000;
+    classDef behaviorFile fill:#fff7e6,stroke:#fa8c16,stroke-width:2,color:#000;
+    class A rootEntity;
+    class B behaviorFile;
+```
