@@ -17,13 +17,14 @@
 
 ## Referências
 
-Este repositório é baseado na lista de reprodução do YouTube [RESTful ABAP Programming Model](https://www.youtube.com/playlist?list=PLKSPsENL3CxzRehaCAyH_K0yHM8KwLrDz).  
-Para fins de crédito ao autor, este repositório é uma versão em português do conteúdo apresentado na playlist.  
-Se você deseja acessar o conteúdo original, visite o canal do autor no YouTube.
-Milton Chandradas
+Este repositório é baseado na lista de reprodução do YouTube:  
+[![YouTube Playlist](https://img.shields.io/badge/YouTube-Playlist-red?style=flat&logo=youtube&logoColor=white)](https://www.youtube.com/playlist?list=PLKSPsENL3CxzRehaCAyH_K0yHM8KwLrDz)  
+**RESTful ABAP Programming Model** - Uma série de vídeos que explica o modelo RAP em detalhes.
 
-https://github.com/miltonchandradas
-https://github.com/miltonchandradas/rapdemo
+Para fins de crédito ao autor, este repositório é uma versão em português do conteúdo apresentado na playlist.  
+Se você deseja acessar o conteúdo original, visite o canal do autor no YouTube:  
+[![Milton Chandradas GitHub](https://img.shields.io/badge/GitHub-Milton%20Chandradas-181717?style=flat&logo=github&logoColor=white)](https://github.com/miltonchandradas)  
+[![Milton Chandradas RAP Demo](https://img.shields.io/badge/GitHub-RAP%20Demo-181717?style=flat&logo=github&logoColor=white)](https://github.com/miltonchandradas/rapdemo)
 
 ## ABAP RAP - Exemplo de implementação
 ### O que é ABAP RAP?
