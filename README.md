@@ -16,10 +16,10 @@ Exemplo de ABAP RAP
 ### O exemplo consiste em um serviço OData que permite a criação, leitura, atualização e exclusão de dados de um objeto de negócios (Business Object) chamado "Produto".
 ```mermaid
 flowchart TD
-    A([SAP Cloud Platform, ABAP Environment<br>SAP S/4HANA ≥ 1909]) --> B([ABAP RESTful Application<br>Programming Model])
-    B --> C([Business Service])
-    B --> D([Core Data Services])
-    B --> E([Behavior Definition & Implementation])
+    A(SAP Cloud Platform, ABAP Environment<br>SAP S/4HANA ≥ 1909) --> B(ABAP RESTful Application<br>Programming Model)
+    B --> C(Business Service)
+    B --> D(Core Data Services)
+    B --> E(Behavior Definition & Implementation)
 ```
 ### Estrutura do projeto
 ```mermaid
@@ -27,20 +27,20 @@ flowchart TD
     subgraph ServiceConsumption[<b>Service consumption</b>]
         direction TB
         A1(SAP Fiori UX<br>Consume OData UI services):::greenBox
-        A2((Web API<br>Consume OData Web APIs)):::greenBox
+        A2(Web API<br>Consume OData Web APIs):::greenBox
     end
 
     subgraph BusinessServicesProvisioning[<b>Business services provisioning</b>]
         direction TB
-        B1((Service binding<br>Bind to protocol version and scenario)):::blueBox
-        B2((Service definition<br>Define scope to be exposed)):::blueBox
-        B3((Business object projection<br>CDS: Projection views<br>BDEF: Behavior projection<br>ABAP: Behavior implementation)):::blueBox
+        B1(Service binding<br>Bind to protocol version and scenario):::blueBox
+        B2(Service definition<br>Define scope to be exposed):::blueBox
+        B3(Business object projection<br>CDS: Projection views<br>BDEF: Behavior projection<br>ABAP: Behavior implementation):::blueBox
     end
 
     subgraph DataModelingAndBehavior[<b>Data modeling and behavior</b>]
         direction TB
-        C1((Business objects<br>CDS: Data modeling<br>BDEF: Behavior definition<br>ABAP: Behavior implementation)):::orangeBox
-        C2((Queries<br>CDS: Data modeling)):::orangeBox
+        C1(Business objects<br>CDS: Data modeling<br>BDEF: Behavior definition<br>ABAP: Behavior implementation):::orangeBox
+        C2(Queries<br>CDS: Data modeling):::orangeBox
     end
 
     ServiceConsumption --> BusinessServicesProvisioning
