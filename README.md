@@ -316,13 +316,10 @@ No exemplo abaixo, temos um **Business Object** chamado `HOUSE` (Casa), que é a
 
 No cenário de ponta a ponta deste exemplo, temos apenas uma única entidade (`UXTEAM`). Para representá-la como um **Business Object**, usamos a palavra-chave `root` no CDS.
 
----
-
-### Diagrama em Mermaid.js
 
 ```mermaid
 graph TD
-    A[HOUSE (Root)] -->|House has many Rooms| B[ROOM]
+    A[HOUSE -Root] -->|House has many Rooms| B[ROOM]
     A:::rootEntity
     B:::childEntity
 
