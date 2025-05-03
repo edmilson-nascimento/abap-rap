@@ -1,6 +1,10 @@
 # abap-rap
 Exemplo de ABAP RAP
 
+Este repositório é baseado na lista de reprodução do YouTube [RESTful ABAP Programming Model](https://www.youtube.com/playlist?list=PLKSPsENL3CxzRehaCAyH_K0yHM8KwLrDz).  
+Para fins de crédito ao autor, este repositório é uma versão em português do conteúdo apresentado na playlist.  
+Se você deseja acessar o conteúdo original, visite o canal do autor no YouTube.
+
 [![GitHub forks](https://img.shields.io/github/forks/edmilson-nascimento/ABAP-Unit-Tests?style=social)](https://github.com/edmilson-nascimento/ABAP-Unit-Tests/network/members)
 [![GitHub stars](https://img.shields.io/github/stars/edmilson-nascimento/ABAP-Unit-Tests?style=social)](https://github.com/edmilson-nascimento/ABAP-Unit-Tests/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/edmilson-nascimento/ABAP-Unit-Tests)](https://github.com/edmilson-nascimento/ABAP-Unit-Tests/issues)
