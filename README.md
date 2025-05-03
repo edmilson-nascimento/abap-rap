@@ -89,13 +89,19 @@ Below are the typical steps for implementing the RESTful ABAP Programming Model:
 
 ### End-to-End Example
 
-Below are the detailed steps for implementing an end-to-end example in the RESTful ABAP Programming Model:
-
 Segue os passos para implementar um exemplo de serviço OData utilizando o ABAP RAP (Rapid Application Programming) no SAP S/4HANA.
 
-0. **Create a package** com nome `ZRAP_EJ`.
+---
 
-1. **Create a table** com nome `ZRAP_UXTEAM_EJ` with the following fields:
+#### **Create a package** com nome `ZRAP_EJ`
+
+Crie um pacote no sistema SAP com o nome `ZRAP_EJ` para organizar os objetos do projeto.
+
+---
+
+#### **Create a table** com nome `ZRAP_UXTEAM_EJ`
+
+Crie uma tabela com o nome `ZRAP_UXTEAM_EJ` contendo os seguintes campos:
    - `id`
    - `firstName`
    - `lastName`
@@ -104,7 +110,7 @@ Segue os passos para implementar um exemplo de serviço OData utilizando o ABAP 
    - `salary`
    - `active`
 
-   ![Create Table Wizard](img/1.%20Create%20a%20table.png)
+   ![Create Table Wizard](img/new_create_table_wizard.png)
 
 ```SQL
 @EndUserText.label : 'UX demo table'
@@ -128,7 +134,7 @@ define table zrap_uxteam_ej {
 }
 ```
 
-2. **Create an interface view** named `ZI_UXTEAM_EJ` that reads from table `ZRAP_UXTEAM_EJ`.
+####  **Create an interface view** named `ZI_UXTEAM_EJ` that reads from table `ZRAP_UXTEAM_EJ`.
 
  ![Create an interface view](img/2%20Create%20an%20interface%20view.png)
 
@@ -179,7 +185,7 @@ Essas anotações são usadas pelo RAP para controle **automático de versioname
 `local_last_changed_at`: Similar, mas referente à instância local (em contextos de objetos compostos).
 
 
-3. **Create a consumption view** named `ZC_UXTEAM_EJ` that reads from interface view `ZI_UXTEAM_EJ`.
+####  **Create a consumption view** named `ZC_UXTEAM_EJ` that reads from interface view `ZI_UXTEAM_EJ`.
 
  ![Create an interface view](img/3.%20Create%20a%20consumption%20view.png)
 
@@ -217,35 +223,27 @@ define root view entity ZC_UXTEAM_EJ
       LocalLastChangedAt
 }
 ```
-4. **Create a metadata extension file** for UI annotations.
+#### **Create a metadata extension file** for UI annotations.
 
-5. **Define entities for Business Object**:
+#### **Define entities for Business Object**:
    - `CREATE`, `UPDATE`, `DELETE` operations.
    - Validations during `CREATE` – Age should be greater than 21.
    - Actions – Active flag is set to true after a series of checks are complete.
    - Determination – When `Role` is changed, we change the `Salary`.
    - Feature control – `Salary` is marked read-only.
 
-6. **Define Behavior Definitions**:
+#### **Define Behavior Definitions**:
    - Note that `CUD` operations are **FREE**.
 
-7. **Implement Behavior Definitions**.
+#### **Implement Behavior Definitions**.
 
-8. **Define Behavior Projections**:
+#### **Define Behavior Projections**:
    - Project all behaviors except `DELETE`.
 
-9. **Define Service Definition**.
+#### **Define Service Definition**.
 
-10. **Define Service Binding**:
+#### **Define Service Binding**:
     - `OData V2` with UI annotations.
     - `OData V2` without Fiori element app.
 
-11. **Add draft handling functionality**.
-
-"Se nada der
-certo hoje,
-amanhã eu
-acordo mais
-cedo e tento
-novamente.
-Até eu conseguir"
+#### **Add draft handling functionality**.
