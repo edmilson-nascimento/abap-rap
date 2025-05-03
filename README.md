@@ -183,6 +183,7 @@ Essas anotações são usadas pelo RAP para controle **automático de versioname
 
  ![Create an interface view](img/3.%20Create%20a%20consumption%20view.png)
 
+" TODO alterar a imagem para o template correto
  ![Create an interface view](img/3.%20Create%20a%20consumption%20view%20(template).png)
 
 Neste exemplo, o código da view é o seguinte:
