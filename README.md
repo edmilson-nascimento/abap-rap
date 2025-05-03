@@ -94,7 +94,7 @@ Segue os passos para implementar um exemplo de serviço OData utilizando o ABAP 
    - `salary`
    - `active`
 
-   ![Create Table Wizard](img/create_table_wizard.png)
+   ![Create Table Wizard](img/1.%20Create%20a%20table.png)
 
 2. **Create an interface view** named `ZI_UXTEAM` that reads from table `ZRAP_UXTEAM`.
 
