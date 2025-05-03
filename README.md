@@ -14,4 +14,12 @@ ABAP Unit Tests e diferentes exemplos
 ![UI5](https://img.shields.io/badge/UI5-0A9EDC?style=flat&logo=sap&logoColor=white)
 ![SAP BTP](https://img.shields.io/badge/SAP%20BTP-0A9EDC?style=flat&logo=sap&logoColor=white)
 
+```mermaid
+flowchart TD
+    A([SAP Cloud Platform, ABAP Environment<br>SAP S/4HANA ≥ 1909]) --> B([ABAP RESTful Application<br>Programming Model])
+    B --> C([Business Service])
+    B --> D([Core Data Services])
+    B --> E([Behavior Definition & Implementation])
+```
+
 "Se vi mais longe, foi por estar sobre os ombros de gigantes"
