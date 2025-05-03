@@ -306,6 +306,30 @@ Defina as entidades para o Business Object com as seguintes operações e valida
 
 Essas definições são essenciais para garantir que o Business Object siga as regras de negócios e comportamentos esperados no modelo RAP.
 
+Um **Business Object** (Objeto de Negócio) é uma representação lógica de uma entidade de negócios no modelo RAP. Ele pode ser composto por uma hierarquia de nós e conter relações entre entidades.
+
+No exemplo abaixo, temos um **Business Object** chamado `HOUSE` (Casa), que é a entidade raiz, e uma entidade associada chamada `ROOM` (Quarto). A relação entre elas é de composição, ou seja, os quartos não podem existir sem a casa.
+
+- **Hierarchical tree of nodes**: A casa possui muitos quartos.
+- **Composition**: Os quartos **não podem existir** sem a casa.
+- **HOUSE is the root entity**: A entidade `HOUSE` representa o **Business Object**.
+
+No cenário de ponta a ponta deste exemplo, temos apenas uma única entidade (`UXTEAM`). Para representá-la como um **Business Object**, usamos a palavra-chave `root` no CDS.
+
+---
+
+### Diagrama em Mermaid.js
+
+```mermaid
+graph TD
+    A[HOUSE (Root)] -->|House has many Rooms| B[ROOM]
+    A:::rootEntity
+    B:::childEntity
+
+    classDef rootEntity fill:#e6f7ff,stroke:#1890ff,stroke-width:2,color:#000;
+    classDef childEntity fill:#fff7e6,stroke:#fa8c16,stroke-width:2,color:#000;
+```
+
 #### **Define Behavior Definitions**:
    - Note that `CUD` operations are **FREE**.
 
