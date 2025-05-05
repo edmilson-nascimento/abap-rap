@@ -506,9 +506,6 @@ CLASS lhc_zi_uxteam_ej DEFINITION INHERITING FROM cl_abap_behavior_handler.
     METHODS get_instance_features FOR INSTANCE FEATURES
       IMPORTING keys REQUEST requested_features FOR zi_uxteam_ej RESULT result.
 
-    METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
-      IMPORTING keys REQUEST requested_authorizations FOR zi_uxteam_ej RESULT result.
-
     METHODS setActive FOR MODIFY
       IMPORTING keys FOR ACTION zi_uxteam_ej~setActive RESULT result.
 
@@ -523,30 +520,6 @@ ENDCLASS.
 CLASS lhc_zi_uxteam_ej IMPLEMENTATION.
 
   METHOD get_instance_features.
-  ENDMETHOD.
-
-  METHOD get_instance_authorizations.
-
-    " Read the active flag of the existing members
-    READ ENTITIES OF zi_uxteam_ej IN LOCAL MODE
-         ENTITY UXTeam
-         FIELDS ( Active ) WITH CORRESPONDING #( keys )
-         RESULT DATA(members)
-         FAILED failed.
-
-    result =
-      VALUE #( FOR member IN members
-
-               LET status = COND #( WHEN member-Active = abap_true
-                                    THEN if_abap_behv=>fc-o-disabled
-                                    ELSE if_abap_behv=>fc-o-enabled  )
-
-               IN
-
-
-                   ( %tky              = member-%tky
-                     %action-setActive = status ) ).
-
   ENDMETHOD.
 
   METHOD setActive.
