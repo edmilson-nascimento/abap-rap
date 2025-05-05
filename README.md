@@ -732,8 +732,18 @@ graph TD
 A **Service Binding** conecta a **Service Definition** ao protocolo OData, permitindo que os dados do **Business Object** sejam consumidos por aplicações externas. O diagrama ilustra como os componentes se relacionam para expor os dados de forma estruturada e eficiente.
 
 
-    - `OData V2` with UI annotations.
-    - `OData V2` without Fiori element app.
+![Service Binding](img/service%20binding%20v4.png)
+
+![Service Binding](img/service%20binding%20v4%20(created).png)
+
+Ativar o serviço `OData V4 - UI`
+
+![Service Binding](img/service%20binding%20v4%20(created).png)
+
+Publicar o serviço `OData V4 - UI` ativo, para isso clicar no botão `Publish local service endpoint`.
+
+![Service Binding](img/service%20binding%20v4%20(published).png
+
 
 #### **Add draft handling functionality**.
 
