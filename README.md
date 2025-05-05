@@ -367,8 +367,8 @@ graph TD
     classDef childEntity fill:#fff7e6,stroke:#fa8c16,stroke-width:2,color:#000;
 ```
 
-#### **Define Behavior Definitions**:
-   - Note that `CUD` operations are **FREE**.
+#### **Define Behavior Definitions**
+Nesta seção, definimos os comportamentos do **Business Object**, incluindo operações como `CREATE`, `UPDATE`, `DELETE`, validações e determinações. Esses comportamentos garantem que as regras de negócios sejam aplicadas corretamente.
 
 #### **Implement Behavior Definitions**.
 
@@ -728,8 +728,8 @@ graph TD
 
 A **Service Binding** conecta a **Service Definition** ao protocolo OData, permitindo que os dados do **Business Object** sejam consumidos por aplicações externas. O diagrama ilustra como os componentes se relacionam para expor os dados de forma estruturada e eficiente.
 
-
 ![Service Binding](img/service%20binding%20v4.png)
+*Figura 1: Diagrama de binding do serviço OData V4.*
 
 ![Service Binding](img/service%20binding%20v4%20(created).png)
 
@@ -741,22 +741,8 @@ Publicar o serviço `OData V4 - UI` ativo, para isso clicar no botão `Publish l
 
 ![Service Binding](img/service%20binding%20v4%20(published).png)
 
+## Conclusão
 
-
-#### **Add Draft Handling Functionality**
-
-O **draft handling** permite que os usuários salvem alterações temporárias em um estado de rascunho antes de confirmá-las. Isso é útil para cenários em que os dados precisam ser revisados ou complementados antes de serem salvos definitivamente.
-
-Para ativar o draft handling, adicione a palavra-chave `with draft` na definição do comportamento:
-```sql
-define behavior for ZC_UXTEAM_EJ alias UXTeam
-implementation in class zbp_i_uxteam_ej unique
-persistent table zrap_uxteam_ej
-draft table zdr_uxteam
-{
-  ...
-}
-```
-
+Este documento apresentou um exemplo completo de implementação do modelo RAP no ABAP, cobrindo desde a criação de tabelas e views até a definição de serviços e comportamentos. O RAP é uma ferramenta poderosa para o desenvolvimento de aplicações modernas no SAP S/4HANA, permitindo a criação de serviços OData robustos e escaláveis. Com as práticas descritas aqui, você estará preparado para implementar soluções eficientes e alinhadas às melhores práticas do mercado.
 
 
