@@ -367,18 +367,16 @@ graph TD
 
 Neste exemplo, o código da behavior extension é o seguinte:
 ```sql
-managed implementation in class zbp_i_uxteam_ej unique;
-//strict ( 2 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+managed;
+with draft;
 
 define behavior for zi_uxteam_ej alias UXTeam
+implementation in class zbp_i_uxteam_ej unique
 persistent table zrap_uxteam_ej
-lock master
-authorization master ( instance )
-//etag master <field_name>
-
+draft table zdr_uxteam
+lock master total etag LastChangedAt
 etag master LocalLastChangedAt
 {
-
   create;
   update;
   delete;
@@ -393,7 +391,6 @@ etag master LocalLastChangedAt
 
 
   mapping for zrap_uxteam_ej
-  
     {
       Id                 = id;
       FirstName          = firstName;
@@ -405,6 +402,7 @@ etag master LocalLastChangedAt
       LastChangedAt      = last_changed_at;
       LocalLastChangedAt = local_last_changed_at;
     }
+
 }
 ```
 
