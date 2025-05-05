@@ -42,6 +42,7 @@ flowchart TD
 ### Estrutura do projeto
 
 Uma estrutura típica de projeto ABAP RAP pode incluir os seguintes componentes:
+
 ```mermaid
 flowchart TD
     subgraph ServiceConsumption[<b>Service consumption</b>]
@@ -106,7 +107,7 @@ Crie uma tabela com o nome `ZRAP_UXTEAM_EJ` contendo os seguintes campos:
    - `salary`
    - `active`
 
-   ![Create Table Wizard](img/new_create_table_wizard.png)
+   ![Create Table Wizard](img/1.%20Create%20a%20table.png)
 
 ```SQL
 @EndUserText.label : 'UX demo table'
