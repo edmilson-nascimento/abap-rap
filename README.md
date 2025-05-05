@@ -331,6 +331,102 @@ graph TD
 
 #### **Implement Behavior Definitions**.
 
+```mermaid
+graph TD
+    A[HOUSE Root] -->|1..1| B[Behavior Definition File]
+    B -->|BUILD - CREATE| C[Create a new house]
+    B -->|REMODEL - UPDATE| D[Update house details]
+    B -->|DESTROY - DELETE| E[Delete a house]
+    B -->|Determination| F[Call repair man if plumbing problem]
+    B -->|Action| G[Buy, Sell the house]
+    B -->|Validation| H[Check out school district]
+
+    classDef rootEntity fill:#e6f7ff,stroke:#1890ff,stroke-width:2,color:#000;
+    classDef behaviorFile fill:#fff7e6,stroke:#fa8c16,stroke-width:2,color:#000;
+    class A rootEntity;
+    class B behaviorFile;
+```
+
+ ![Create an metadata extension](img/behavior%20definition%20(extract).png)
+
+Neste exemplo, o código da metadata extension é o seguinte:
+```sql
+managed implementation in class zbp_i_uxteam_ej unique;
+//strict ( 2 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for zi_uxteam_ej //alias <alias_name>
+persistent table zrap_uxteam_ej
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+//  create;
+//  update;
+//  delete;
+//  field ( readonly ) Id;
+
+  create;
+  update;
+  delete;
+
+  field ( numbering : managed, readonly ) Id;
+  field ( readonly ) Active, Salary;
+  field ( readonly ) LastChangedAt, LocalLastChangedAt;
+
+  action ( features : instance ) setActive result [1] $self;
+  determination changeSalary on save { field Role; }
+  validation validateAge on save { field Age; create; }
+
+
+  mapping for zrap_uxteam_ej
+  {
+    Id = id;
+    FirstName = firstName;
+    LastName = lastName;
+    Age = age;
+    Role = role;
+    Salary = salary;
+    Active = active;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+
+//define behavior for zbp_i_uxteam_ej alias UXTeam
+//implementation in class zbp_i_uxteam_5551 unique
+//persistent table zrap_uxteam_5551
+//// draft table zdr_uxteam_5551
+//lock master // total etag LastChangedAt
+//etag master LocalLastChangedAt
+//{
+//  create;
+//  update;
+//  delete;
+//
+//  field ( numbering : managed, readonly ) Id;
+//  field ( readonly ) Active, Salary;
+//  field ( readonly ) LastChangedAt, LocalLastChangedAt;
+//
+//  action ( features : instance ) setActive result [1] $self;
+//  determination changeSalary on save { field Role; }
+//  validation validateAge on save { field Age; create; }
+//
+//
+//  mapping for ZRAP_UXTEAM_5551
+//  {
+//    Id = id;
+//    FirstName = firstName;
+//    LastName = lastName;
+//    Age = age;
+//    Role = role;
+//    Salary = salary;
+//    Active = active;
+//    LastChangedAt = last_changed_at;
+//    LocalLastChangedAt = local_last_changed_at;
+//  }
+//}
+```
 #### **Define Behavior Projections**:
    - Project all behaviors except `DELETE`.
 
@@ -342,22 +438,3 @@ graph TD
 
 #### **Add draft handling functionality**.
 
----
-
-### Diagrama em Mermaid.js
-
-```mermaid
-graph TD
-    A[HOUSE (Root)] -->|1..1| B[Behavior Definition File]
-    B -->|BUILD (CREATE)| C[Create a new house]
-    B -->|REMODEL (UPDATE)| D[Update house details]
-    B -->|DESTROY (DELETE)| E[Delete a house]
-    B -->|Determination| F[Call repair man if plumbing problem]
-    B -->|Action| G[Buy, Sell the house]
-    B -->|Validation| H[Check out school district]
-
-    classDef rootEntity fill:#e6f7ff,stroke:#1890ff,stroke-width:2,color:#000;
-    classDef behaviorFile fill:#fff7e6,stroke:#fa8c16,stroke-width:2,color:#000;
-    class A rootEntity;
-    class B behaviorFile;
-```
