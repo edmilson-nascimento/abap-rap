@@ -18,11 +18,22 @@
 ## Índice
 1. [Referências](#referências)
 2. [ABAP RAP - Exemplo de implementação](#abap-rap---exemplo-de-implementação)
-3. [Estrutura do projeto](#estrutura-do-projeto)
-4. [Steps for RESTful ABAP Programming Model](#steps-for-restful-abap-programming-model)
-5. [End-to-End Example](#end-to-end-example)
-6. [Define Service Binding](#define-service-binding)
-7. [Add draft handling functionality](#add-draft-handling-functionality)
+   - [O que é ABAP RAP?](#o-que-é-abap-rap)
+   - [Estrutura do projeto](#estrutura-do-projeto)
+3. [Steps for RESTful ABAP Programming Model](#steps-for-restful-abap-programming-model)
+4. [End-to-End Example](#end-to-end-example)
+   - [Create a package](#create-a-package)
+   - [Create a table](#create-a-table)
+   - [Create an interface view](#create-an-interface-view)
+   - [Create a consumption view](#create-a-consumption-view)
+   - [Create a metadata extension file](#create-a-metadata-extension-file)
+   - [Define entities for Business Object](#define-entities-for-business-object)
+   - [Define Behavior Definitions](#define-behavior-definitions)
+   - [Implement Behavior Definitions](#implement-behavior-definitions)
+   - [Define Behavior Projections](#define-behavior-projections)
+   - [Define Service Definition](#define-service-definition)
+   - [Define Service Binding](#define-service-binding)
+   - [Add draft handling functionality](#add-draft-handling-functionality)
 
 ## Referências
 
@@ -34,6 +45,10 @@ Para fins de crédito ao autor, este repositório é uma versão em português d
 Se você deseja acessar o conteúdo original, visite o canal do autor no YouTube:  
 [![Milton Chandradas GitHub](https://img.shields.io/badge/GitHub-Milton%20Chandradas-181717?style=flat&logo=github&logoColor=white)](https://github.com/miltonchandradas)  
 [![Milton Chandradas RAP Demo](https://img.shields.io/badge/GitHub-RAP%20Demo-181717?style=flat&logo=github&logoColor=white)](https://github.com/miltonchandradas/rapdemo)
+
+## Introdução
+
+Este repositório apresenta um exemplo completo de implementação do modelo RAP (RESTful Application Programming) no ABAP. O objetivo é demonstrar como criar, configurar e consumir serviços OData no SAP S/4HANA utilizando as melhores práticas do RAP.
 
 ## ABAP RAP - Exemplo de implementação
 ### O que é ABAP RAP?
@@ -117,6 +132,7 @@ Crie uma tabela com o nome `ZRAP_UXTEAM_EJ` contendo os seguintes campos:
    - `active`
 
 ![Create Table Wizard](img/1.%20Create%20a%20table.png)
+*Figura 1: Tela de criação de tabela no SAP.*
 
 ```SQL
 @EndUserText.label : 'UX demo table'
@@ -669,8 +685,6 @@ define behavior for ZC_UXTEAM_EJ  alias UXTeam
 
 #### **Define Service Definition**.
 
-![Service definition](img/Service%20Definition.png)
-
 ```sql
 @EndUserText.label: 'Service definition for UXTeam'
 define service ZUI_UXTEAM_EJ {
@@ -728,9 +742,21 @@ Publicar o serviço `OData V4 - UI` ativo, para isso clicar no botão `Publish l
 ![Service Binding](img/service%20binding%20v4%20(published).png)
 
 
-#### **Add draft handling functionality**.
 
----
+#### **Add Draft Handling Functionality**
+
+O **draft handling** permite que os usuários salvem alterações temporárias em um estado de rascunho antes de confirmá-las. Isso é útil para cenários em que os dados precisam ser revisados ou complementados antes de serem salvos definitivamente.
+
+Para ativar o draft handling, adicione a palavra-chave `with draft` na definição do comportamento:
+```sql
+define behavior for ZC_UXTEAM_EJ alias UXTeam
+implementation in class zbp_i_uxteam_ej unique
+persistent table zrap_uxteam_ej
+draft table zdr_uxteam
+{
+  ...
+}
+```
 
 
 
