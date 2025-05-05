@@ -672,9 +672,9 @@ define service ZUI_UXTEAM_EJ {
 #### **Define Service Binding**:
 ```mermaid
 graph TD
-    A[Service Definition] -->|Expose| B[Projection View (ZC_UXTEAM_EJ)]
-    B -->|Implements| C[Interface View (ZI_UXTEAM_EJ)]
-    C -->|Reads From| D[Database Table (ZRAP_UXTEAM_EJ)]
+    A[Service Definition] -->|Expose| B[Projection View ZC_UXTEAM_EJ]
+    B -->|Implements| C[Interface View ZI_UXTEAM_EJ]
+    C -->|Reads From| D[Database Table ZRAP_UXTEAM_EJ]
 
     classDef serviceDefinition fill:#e6f7ff,stroke:#1890ff,stroke-width:2,color:#000;
     classDef projectionView fill:#fff7e6,stroke:#fa8c16,stroke-width:2,color:#000;
