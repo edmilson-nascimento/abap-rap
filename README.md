@@ -107,7 +107,7 @@ Crie uma tabela com o nome `ZRAP_UXTEAM_EJ` contendo os seguintes campos:
    - `salary`
    - `active`
 
-   ![Create Table Wizard](img/1.%20Create%20a%20table.png)
+![Create Table Wizard](img/1.%20Create%20a%20table.png)
 
 ```SQL
 @EndUserText.label : 'UX demo table'
