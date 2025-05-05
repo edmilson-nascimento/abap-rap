@@ -141,9 +141,9 @@ Neste exemplo, o código da view é o seguinte:
 ```sql
 @AbapCatalog.sqlViewName: 'ZZI_UXTEAM_EJ'
 @AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Interface view for UX demo'
-// @Metadata.ignorePropagatedAnnotations: true
 define root view zi_uxteam_ej
   as select from zrap_uxteam_ej
 {
