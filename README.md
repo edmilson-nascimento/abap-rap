@@ -696,8 +696,27 @@ define service ZUI_UXTEAM_EJ {
 ```
 
 #### **Define Service Binding**:
+```mermaid
+graph TD
+    A[Service Definition] -->|Expose| B[Projection View (ZC_UXTEAM_EJ)]
+    B -->|Implements| C[Interface View (ZI_UXTEAM_EJ)]
+    C -->|Reads From| D[Database Table (ZRAP_UXTEAM_EJ)]
+
+    classDef serviceDefinition fill:#e6f7ff,stroke:#1890ff,stroke-width:2,color:#000;
+    classDef projectionView fill:#fff7e6,stroke:#fa8c16,stroke-width:2,color:#000;
+    classDef interfaceView fill:#f0f5ff,stroke:#2f54eb,stroke-width:2,color:#000;
+    classDef databaseTable fill:#fff1f0,stroke:#f5222d,stroke-width:2,color:#000;
+
+    class A serviceDefinition;
+    class B projectionView;
+    class C interfaceView;
+    class D databaseTable;
+```
+
+
     - `OData V2` with UI annotations.
     - `OData V2` without Fiori element app.
 
 #### **Add draft handling functionality**.
+
 
