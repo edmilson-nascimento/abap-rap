@@ -716,7 +716,7 @@ Ativar o serviço `OData V4 - UI`
 
 Publicar o serviço `OData V4 - UI` ativo, para isso clicar no botão `Publish local service endpoint`.
 
-![Service Binding](img/service%20binding%20v4%20(published).png
+![Service Binding](img/service%20binding%20v4%20(published).png)
 
 
 #### **Add draft handling functionality**.
