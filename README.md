@@ -114,7 +114,7 @@ Crie uma tabela com o nome `ZRAP_UXTEAM_EJ` contendo os seguintes campos:
 @AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
 @AbapCatalog.tableCategory : #TRANSPARENT
 @AbapCatalog.deliveryClass : #A
-@AbapCatalog.dataMaintenance : #ALLOWED
+@AbapCatalog.dataMaintenance : #RESTRICTED
 define table zrap_uxteam_ej {
 
   key client            : abap.clnt not null;
