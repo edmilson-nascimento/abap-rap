@@ -428,6 +428,9 @@ authorization master ( instance )
 //}
 ```
 
+
+#### **Implement Behavior Definitions**
+
 ##### Entity Manipulation Language (EML)
 
 ![Behavior](img/behavior%20definition%20(perform).png)
@@ -455,7 +458,20 @@ MODIFY ENTITY EntityName
     [MAPPED ct_mapped]
     [REPORTED ct_reported].
 ```
+O **Entity Manipulation Language (EML)** também permite realizar operações de leitura diretamente no ABAP. Abaixo estão os comandos disponíveis para a operação `READ`:
 
+```abap
+READ ENTITY EntityName
+  [FIELDS ( field1 field2 ... ) WITH] | [FROM] it_instance
+  RESULT et_result
+  BY \association_name
+  [FIELDS ( field1 field2 ... ) WITH] | [FROM] it_instance_rba
+  RESULT et_result_rba
+  LINK et_link_rba
+  [FAILED ct_failed].
+```
+
+![Behavior](img/behavior%20implementation.png)
 
 #### **Define Behavior Projections**:
    - Project all behaviors except `DELETE`.
