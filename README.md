@@ -15,6 +15,15 @@
 ![SAP BTP](https://img.shields.io/badge/SAP%20BTP-0A9EDC?style=flat&logo=sap&logoColor=white)
 ![SAP RAP](https://img.shields.io/badge/SAP%20RAP-0A9EDC?style=flat&logo=sap&logoColor=white)
 
+## Índice
+1. [Referências](#referências)
+2. [ABAP RAP - Exemplo de implementação](#abap-rap---exemplo-de-implementação)
+3. [Estrutura do projeto](#estrutura-do-projeto)
+4. [Steps for RESTful ABAP Programming Model](#steps-for-restful-abap-programming-model)
+5. [End-to-End Example](#end-to-end-example)
+6. [Define Service Binding](#define-service-binding)
+7. [Add draft handling functionality](#add-draft-handling-functionality)
+
 ## Referências
 
 Este repositório é baseado na lista de reprodução do YouTube:  
