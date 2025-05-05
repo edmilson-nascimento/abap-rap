@@ -199,6 +199,9 @@ Neste exemplo, o código da view é o seguinte:
 @Search.searchable: true
 
 define root view entity ZC_UXTEAM_EJ
+
+// TODO: check the itens bellow
+//provider contract transactional_query
 //provider contract transactional_interface
   as projection on zi_uxteam_ej as UXTeam
 
@@ -230,7 +233,6 @@ define root view entity ZC_UXTEAM_EJ
       LastChangedAt,
       LocalLastChangedAt
 }
-
 ```
 #### **Create a metadata extension file** for UI annotations.
  ![Create an metadata extension](img/metadata%20extension.png)
