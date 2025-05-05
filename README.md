@@ -361,9 +361,9 @@ graph TD
     class B behaviorFile;
 ```
 
- ![Create an metadata extension](img/behavior%20definition%20(extract).png)
+ ![Create an behavior](img/behavior%20definition%20project.png)
 
-Neste exemplo, o código da metadata extension é o seguinte:
+Neste exemplo, o código da behavior extension é o seguinte:
 ```sql
 managed implementation in class zbp_i_uxteam_ej unique;
 //strict ( 2 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
