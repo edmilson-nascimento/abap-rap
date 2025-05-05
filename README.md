@@ -712,11 +712,32 @@ graph TD
     class C interfaceView;
     class D databaseTable;
 ```
+1. **Service Definition**:
+   - Representa a definição do serviço (`ZUI_UXTEAM_EJ`) que expõe a **Projection View** (`ZC_UXTEAM_EJ`) como um serviço OData.
+   - É o ponto de entrada para consumir os dados do **Business Object**.
+
+2. **Projection View**:
+   - A **Projection View** (`ZC_UXTEAM_EJ`) implementa a lógica de apresentação e expõe os dados da **Interface View** (`ZI_UXTEAM_EJ`).
+   - Define quais campos e comportamentos do **Business Object** serão expostos no serviço.
+
+3. **Interface View**:
+   - A **Interface View** (`ZI_UXTEAM_EJ`) lê os dados diretamente da tabela do banco de dados (`ZRAP_UXTEAM_EJ`).
+   - Serve como uma camada intermediária entre a tabela e a **Projection View**.
+
+4. **Database Table**:
+   - A tabela do banco de dados (`ZRAP_UXTEAM_EJ`) armazena os dados persistentes do **Business Object**.
+
+#### Conclusão
+
+A **Service Binding** conecta a **Service Definition** ao protocolo OData, permitindo que os dados do **Business Object** sejam consumidos por aplicações externas. O diagrama ilustra como os componentes se relacionam para expor os dados de forma estruturada e eficiente.
 
 
     - `OData V2` with UI annotations.
     - `OData V2` without Fiori element app.
 
 #### **Add draft handling functionality**.
+
+---
+
 
 
