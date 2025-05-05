@@ -190,34 +190,47 @@ Essas anotações são usadas pelo RAP para controle **automático de versioname
 
 Neste exemplo, o código da view é o seguinte:
 ```sql
-@EndUserText.label: 'UXTeam Consumption View'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@Search.searchable: true
+
+@EndUserText.label: 'UXTeam Consumption View'
+
 @Metadata.allowExtensions: true
+
+@Search.searchable: true
+
 define root view entity ZC_UXTEAM_EJ
-  provider contract transactional_interface
+//provider contract transactional_interface
   as projection on zi_uxteam_ej as UXTeam
+
 {
-    @EndUserText.label: 'Id'
+      @EndUserText.label: 'Id'
   key Id,
-  @EndUserText.label: 'First Name'
+
+      @EndUserText.label: 'First Name'
       @Search.defaultSearchElement: true
       Firstname,
+
       @EndUserText.label: 'Last Name'
       @Search.defaultSearchElement: true
       Lastname,
+
       @EndUserText.label: 'Age'
       Age,
-      @Search.defaultSearchElement: true
+
       @EndUserText.label: 'Role'
+      @Search.defaultSearchElement: true
       Role,
+
       @EndUserText.label: 'Salary'
       Salary,
+
       @EndUserText.label: 'Active'
       Active,
+
       LastChangedAt,
       LocalLastChangedAt
 }
+
 ```
 #### **Create a metadata extension file** for UI annotations.
  ![Create an metadata extension](img/metadata%20extension.png)
