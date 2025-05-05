@@ -427,6 +427,36 @@ authorization master ( instance )
 //  }
 //}
 ```
+
+##### Entity Manipulation Language (EML)
+
+![Behavior](img/behavior%20definition%20(perform).png)
+
+O **Entity Manipulation Language (EML)** é uma linguagem utilizada no ABAP para consumir diretamente os **Business Objects**. Ele oferece uma maneira segura e eficiente de acessar e modificar dados em cenários transacionais.
+
+Principais características do EML:
+- **Business Objects** podem ser consumidos diretamente no ABAP utilizando a sintaxe do EML.
+- Proporciona acesso seguro ao tipo (type-safe) para leitura e modificação de dados em cenários de desenvolvimento transacional.
+- Possui **3 principais comandos** para manipulação de dados.
+
+O EML é uma ferramenta poderosa no modelo RAP, permitindo que os desenvolvedores interajam diretamente com os **Business Objects** de forma segura e eficiente. Ele simplifica o desenvolvimento de aplicações transacionais ao fornecer uma interface consistente para manipulação de dados.
+
+O **Entity Manipulation Language (EML)** permite manipular entidades diretamente no ABAP. Abaixo estão os comandos disponíveis para a operação `MODIFY`:
+
+```abap
+MODIFY ENTITY EntityName
+  CREATE [FIELDS ( field1 field2 ... ) WITH] | [FROM] it_instance_c
+  CREATE BY \association_name [FIELDS ( field1 field2 ... ) WITH] | [FROM] it_instance_cba
+  UPDATE [FIELDS ( field1 field2 ... ) WITH] | [FROM] it_instance_u
+  DELETE FROM it_instance_d
+  EXECUTE action_name FROM it_instance_a
+    [RESULT et_result_a]
+    [FAILED ct_failed]
+    [MAPPED ct_mapped]
+    [REPORTED ct_reported].
+```
+
+
 #### **Define Behavior Projections**:
    - Project all behaviors except `DELETE`.
 
