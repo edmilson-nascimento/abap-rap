@@ -472,6 +472,7 @@ READ ENTITY EntityName
 ```
 
 ![Behavior](img/behavior%20implementation.png)
+
 ![Behavior class](img/behavior%20implementation%20(class).png)
 
 Para a implementação do comportamento, crie uma classe de implementação de comportamento (Behavior Implementation Class) que implementa a interface `IF_` e o nome da Behavior Definition.	
