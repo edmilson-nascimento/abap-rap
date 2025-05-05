@@ -361,23 +361,21 @@ graph TD
     class B behaviorFile;
 ```
 
- ![Create an behavior](img/behavior%20definition%20project.png)
+![Create an behavior](img/behavior%20implementation%20(create).png
 
 Neste exemplo, o código da behavior extension é o seguinte:
 ```sql
 managed implementation in class zbp_i_uxteam_ej unique;
 //strict ( 2 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
 
-define behavior for zi_uxteam_ej //alias <alias_name>
+define behavior for zi_uxteam_ej alias UXTeam
 persistent table zrap_uxteam_ej
 lock master
 authorization master ( instance )
 //etag master <field_name>
+
+etag master LocalLastChangedAt
 {
-//  create;
-//  update;
-//  delete;
-//  field ( readonly ) Id;
 
   create;
   update;
@@ -393,53 +391,19 @@ authorization master ( instance )
 
 
   mapping for zrap_uxteam_ej
-  {
-    Id = id;
-    FirstName = firstName;
-    LastName = lastName;
-    Age = age;
-    Role = role;
-    Salary = salary;
-    Active = active;
-    LastChangedAt = last_changed_at;
-    LocalLastChangedAt = local_last_changed_at;
-  }
+  
+    {
+      Id                 = id;
+      FirstName          = firstName;
+      LastName           = lastName;
+      Age                = age;
+      Role               = role;
+      Salary             = salary;
+      Active             = active;
+      LastChangedAt      = last_changed_at;
+      LocalLastChangedAt = local_last_changed_at;
+    }
 }
-
-
-//define behavior for zbp_i_uxteam_ej alias UXTeam
-//implementation in class zbp_i_uxteam_5551 unique
-//persistent table zrap_uxteam_5551
-//// draft table zdr_uxteam_5551
-//lock master // total etag LastChangedAt
-//etag master LocalLastChangedAt
-//{
-//  create;
-//  update;
-//  delete;
-//
-//  field ( numbering : managed, readonly ) Id;
-//  field ( readonly ) Active, Salary;
-//  field ( readonly ) LastChangedAt, LocalLastChangedAt;
-//
-//  action ( features : instance ) setActive result [1] $self;
-//  determination changeSalary on save { field Role; }
-//  validation validateAge on save { field Age; create; }
-//
-//
-//  mapping for ZRAP_UXTEAM_5551
-//  {
-//    Id = id;
-//    FirstName = firstName;
-//    LastName = lastName;
-//    Age = age;
-//    Role = role;
-//    Salary = salary;
-//    Active = active;
-//    LastChangedAt = last_changed_at;
-//    LocalLastChangedAt = local_last_changed_at;
-//  }
-//}
 ```
 
 
@@ -703,7 +667,33 @@ ENDCLASS.
 #### **Define Behavior Projections**:
    - Project all behaviors except `DELETE`.
 
+```sql
+projection;
+//strict ( 2 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for ZC_UXTEAM_EJ  alias UXTeam
+use etag
+{
+
+  use create;
+  use update;
+  use delete;  // We are NOT projecting delete operation !!
+
+  use action setActive;
+
+}
+```
+
 #### **Define Service Definition**.
+
+![Service definition](img/Service%20Definition.png)
+
+```sql
+@EndUserText.label: 'Service definition for UXTeam'
+define service ZUI_UXTEAM_EJ {
+  expose ZC_UXTEAM_EJ as UXTeam;
+}
+```
 
 #### **Define Service Binding**:
     - `OData V2` with UI annotations.
