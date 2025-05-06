@@ -749,15 +749,3 @@ Publicar o serviço `OData V4 - UI` ativo, para isso clicar no botão `Publish l
 ## Conclusão
 
 Este documento apresentou um exemplo completo de implementação do modelo RAP no ABAP, cobrindo desde a criação de tabelas e views até a definição de serviços e comportamentos. O RAP é uma ferramenta poderosa para o desenvolvimento de aplicações modernas no SAP S/4HANA, permitindo a criação de serviços OData robustos e escaláveis. Com as práticas descritas aqui, você estará preparado para implementar soluções eficientes e alinhadas às melhores práticas do mercado.
-
-
-### Exercise 6.1.1: Define an Instance Action 
-
-> First, define the non-factory, instance action **`deductDiscount`** in the behavior definition of the _Travel_ entity. This action has no input parameter. 
-
- <details>
-  <summary>🔵 Click to expand!</summary>
-     
-    Go ahead with the implementation of the action method.     
-
-   </details>
