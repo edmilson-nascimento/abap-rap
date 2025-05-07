@@ -4,7 +4,7 @@ with draft;
 define behavior for zi_uxteam_ej alias UXTeam
 implementation in class zbp_i_uxteam_ej unique
 persistent table zrap_uxteam_ej
-draft table zdr_uxteam
+draft table zrap_uxteam_ej_d
 lock master total etag LastChangedAt
 etag master LocalLastChangedAt
 {
