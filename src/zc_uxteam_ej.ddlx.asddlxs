@@ -1,7 +1,7 @@
 @Metadata.layer: #CORE
 
 @UI.headerInfo: { typeName: 'UX Team',
-                  typeNamePlural: 'UX Team',
+                  typeNamePlural: 'UX Team | Header List',
                   title: { type: #STANDARD, label: 'UXTeam', value: 'Id' } }
 
 @UI.presentationVariant: [ { sortOrder: [ { by: 'Id', direction: #ASC } ] } ]
@@ -12,7 +12,7 @@ annotate view ZC_UXTEAM_EJ with
   @UI.facet: [ { id: 'UXDemo',
                  purpose: #STANDARD,
                  type: #IDENTIFICATION_REFERENCE,
-                 label: 'UXTeam',
+                 label: 'UX Team | Detail',
                  position: 10 } ]
   @UI.identification: [ { position: 1, label: 'Id' } ]
   Id;
