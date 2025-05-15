@@ -17,11 +17,12 @@
 
 ## Índice
 1. [Referências](#referências)
-2. [ABAP RAP - Exemplo de implementação](#abap-rap---exemplo-de-implementação)
+2. [Referências Práticas](#referências-práticas)
+3. [ABAP RAP - Exemplo de implementação](#abap-rap---exemplo-de-implementação)
    - [O que é ABAP RAP?](#o-que-é-abap-rap)
    - [Estrutura do projeto](#estrutura-do-projeto)
-3. [Steps for RESTful ABAP Programming Model](#steps-for-restful-abap-programming-model)
-4. [End-to-End Example](#end-to-end-example)
+4. [Steps for RESTful ABAP Programming Model](#steps-for-restful-abap-programming-model)
+5. [End-to-End Example](#end-to-end-example)
    - [Create a package](#create-a-package)
    - [Create a table](#create-a-table)
    - [Create an interface view](#create-an-interface-view)
@@ -45,6 +46,54 @@ Para fins de crédito ao autor, este repositório é uma versão em português d
 Se você deseja acessar o conteúdo original, visite o canal do autor no YouTube:  
 [![Milton Chandradas GitHub](https://img.shields.io/badge/GitHub-Milton%20Chandradas-181717?style=flat&logo=github&logoColor=white)](https://github.com/miltonchandradas)  
 [![Milton Chandradas RAP Demo](https://img.shields.io/badge/GitHub-RAP%20Demo-181717?style=flat&logo=github&logoColor=white)](https://github.com/miltonchandradas/rapdemo)
+
+## Referências Práticas
+
+Esta seção contém links úteis para implementações reais e ferramentas essenciais no desenvolvimento ABAP/RAP.
+
+### Ferramentas de Desenvolvimento
+- [abapGIT Plugin](https://eclipse.abapgit.org/updatesite/)
+  - Plugin Eclipse para integração com Git em projetos ABAP.
+  - Essencial para versionamento de código ABAP.
+
+- [ABAP Cleaner](https://sap.github.io/abap-cleaner/updatesite)
+  - Ferramenta para formatação e limpeza de código ABAP.
+  - Ajuda a manter um padrão de codificação consistente.
+
+### Tutoriais e Guias
+- [RAP Fiori Application](https://www.mindsetconsulting.com/restful-abap-programming-model-fiori-rap/)
+  - Guia completo para desenvolvimento de aplicações Fiori usando RAP.
+
+- [BAS Development](https://developers.sap.com/tutorials/abap-custom-ui-bas-develop-s4hc.html)
+  - Tutorial para desenvolvimento usando Business Application Studio.
+
+- [abapGIT Setup](https://developers.sap.com/tutorials/abap-environment-abapgit-transfer.html)
+  - Guia de configuração do abapGIT no ambiente ABAP.
+
+### Integrações e APIs
+- [API Integration in ABAP](https://abapeur.fr/en/easily-call-apis-in-abap/)
+  - Guia prático para chamadas de API em ABAP.
+
+- [SAP Destination Guide](https://userapps.support.sap.com/sap/support/knowledge/en/3297481)
+  - Configuração de destinos para integrações.
+
+- [Communication Arrangement](https://developers.sap.com/tutorials/abap-environment-communication-arrangement.html)
+  - Setup de arranjos de comunicação no SAP.
+
+### Jobs e Automação
+- [Modern Job Scheduling](https://abapeur.fr/en/sm36-sm37thanks-but-goodbye/)
+  - Abordagem moderna para agendamento de jobs em ABAP.
+
+- [Application Jobs Examples](https://github.com/SAP-samples/abap-platform-application-jobs)
+  - Exemplos práticos de jobs em ABAP por Fischer.
+
+### Deployment e Configuração
+- [Fiori Deployment Guide](https://developers.sap.com/tutorials/abap-s4hanacloud-procurement-purchasereq-flp.html)
+  - Tutorial para deploy de aplicações Fiori.
+
+### Recursos de Desenvolvimento
+- [GitHub Token Setup](https://github.com/settings/tokens)
+  - Configuração de tokens para integração com GitHub.
 
 ## Introdução
 
